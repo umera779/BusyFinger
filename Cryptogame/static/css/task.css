@@ -1,0 +1,100 @@
+    /* General Styles */
+    * {
+        margin: 0;
+        padding: 0;
+    
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+        overflow:hidden;
+    }
+    body {
+        background-color: #bbbbbb;
+    
+    }
+    /* Container */
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #bbbbbb;
+    }
+    
+    /* Task List */
+    .task-list {
+        display: flex;
+        flex-direction: column;
+        gap: 15px; /* Space between tasks */
+    }
+    
+    /* Task Card */
+    .task-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Task Info */
+    .task-info {
+        max-width: 70%;
+    }
+    
+    .task-title {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    .task-value {
+        font-size: 14px;
+        color: #777;
+    }
+    
+    /* Task Action */
+    .task-action {
+        text-align: right;
+    }
+    
+    .task-button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 8px 12px;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .task-button:hover {
+        background-color: #218838;
+    }
+    .popup {
+      position: fixed;
+      top: 20px; /* Position near the top */
+      left: 50%; /* Center horizontally */
+      transform: translateX(-50%); /* Adjust horizontally to be perfectly centered */
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 15px;
+      border-radius: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s ease;
+    }
+    
+    .popup-content {
+      text-align: center;
+      font-size: 16px;
+    }
+    
+    /* When the popup is visible */
+    .popup.show {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    

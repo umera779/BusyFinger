@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS -->
+</head>
+<body>
+    <div class="container">
+        <div class="task-list">
+            <div class="task-card">
+                <div class="task-info">
+                    <h3 class="task-title">{{ task.Taskname }}</h3>
+                    <p class="task-value">Coming Soon!</p>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+    </div>
+</body>
+</html>
+<script>
+
+</script>
+<style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    overflow:hidden;
+}
+
+/* Container */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f8fa;
+}
+
+/* Task List */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between tasks */
+}
+
+/* Task Card */
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Info */
+.task-info {
+    max-width: 70%;
+    text-align:center;
+}
+
+.task-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.task-value {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Task Action */
+.task-action {
+    text-align: right;
+}
+
+.task-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.task-button:hover {
+    background-color: #218838;
+}
+

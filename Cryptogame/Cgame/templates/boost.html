@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost Center</title>
+    <!-- Boxicons CDN -->
+    <link rel="stylesheet" href="{% static 'css/boxicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/boost.css'%}">
+    <script src="{% static 'js/boost.js' %}"></script>
+</head>
+<body>
+    <div class="container">
+        {% if messages %}
+        {% for message in messages %}
+        <div id="popup" class="popup">
+            <p>{{ message }}</p>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% for boosting_rate in boosting_rate %}
+        <div class="boost-card">
+            <p class="level-btn">Level {{ boosting_rate.level }}</p>
+            <div class="boost-info">
+                Coin: {{ boosting_rate.needed_coin }} | {{ boosting_rate.boost_name }} | {{ boosting_rate.boost_value }}
+            </div>
+            <form id="boostForm-{{ boosting_rate.id }}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="booster_value" value="{{ boosting_rate.boost_value }}">
+                <input type="hidden" name="needed_value" value="{{ boosting_rate.needed_coin }}">
+                <input type="hidden" name="boost_id" value="{{ boosting_rate.id }}">
+                <button type="submit" class="do-task">
+                    <i class='bx bx-bolt-circle bx-tada bx-flip-horizontal'></i> Boost Now
+                </button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

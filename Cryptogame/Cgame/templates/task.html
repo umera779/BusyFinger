@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <link rel="stylesheet" href="{% static 'css/task.css'%}">
+    <script src="{% static 'js/task.js'%}"></script>
+
+</head>
+<body>
+    <div class="container">
+    {% if messages%}
+    {% for message in messages%}
+    <div id="popup" class="popup">
+            <div class="popup-content">
+              <p>{{message}}</p>
+            </div>
+          </div>
+    {% endfor %}
+    {% endif %}
+        <div class="task-list">
+            <center>Available Task</center>
+
+            {% for task in tasklist %}
+            <div class="task-card">
+                <div class="task-info">
+                    <h3 class="task-title">{{ task.Taskname }}</h3>
+                    <p class="task-value">Value: {{ task.Taskvalue }}</p>
+                </div>
+                <form method="post" action="task" class="task-action">
+                    {% csrf_token %}
+                    <input type="hidden" name="taskvalue" value="{{ task.Taskvalue }}">
+                    <input type="hidden" name="task_id" value="{{ task.id }}">
+                    <input type="hidden" name="redirect_url" value="{{task.link}}"/>
+                    <button type="submit" class="task-button">Go</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+      
+    </div>
+   
+    </div>
+</body>
+</html>
+
+<style>
